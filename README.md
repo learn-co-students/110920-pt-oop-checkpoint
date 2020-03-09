@@ -1,4 +1,3 @@
-
 ## Object Oriented Programming [Suggested Time: 20 minutes]
 
 In this exercise you will primarily be exploring a Pokemon dataset. Pokemon are fictional creatures from the [Nintendo franchise](https://en.wikipedia.org/wiki/Pok%C3%A9mon) of the same name.
@@ -16,7 +15,7 @@ To help with this task we we will create Pokemon objects that methods can be cal
 You'll be working with following dictionaries to create the `Pokemon` objects
 
 
-```
+```python
 # Use the following data
 bulbasaur_data = {"name": 'bulbasaur', "weight": 69, "height": 7, "base_experience": 64, "types": ["grass", "poison"]}
 charmander_data = {"name": 'charmander', "weight": 85, "height": 6, "base_experience": 62, "types": ["fire"]}
@@ -31,7 +30,7 @@ Create a class called `Pokemon` with an `__init__` method. Every `Pokemon` insta
 * `height`
 
 
-```
+```python
 # Create your class below with the correct syntax, including an __init__ method.
 ```
 
@@ -41,7 +40,7 @@ Create a class called `Pokemon` with an `__init__` method. Every `Pokemon` insta
 Using the `bulbasaur_data`, `charmander_data` and `squirtle_data` variables, create the corresponding pokemon objects.
 
 
-```
+```python
 # Your code here
 bulbasaur = pass
 charmander = pass
@@ -49,7 +48,7 @@ squirtle = pass
 ```
 
 
-```
+```python
 # run this cell to test and check your code
 # you may need to edit the attribute variable names if you named them differently!
 
@@ -60,8 +59,8 @@ def print_pokeinfo(pkmn):
     print('\n')
     
 print_pokeinfo(bulbasaur)
-print_pokeinfo(ivysaur)
-print_pokeinfo(venusaur)
+print_pokeinfo(charmander)
+print_pokeinfo(squirtle)
 ```
 
 ### 3. Instance Methods
@@ -81,7 +80,7 @@ The height and weight data of Pokemon from the API is in **decimeters** and **he
 ```
 
 
-```
+```python
 # run this cell to test and check your code
 
 # After defining a new instance method on the class, 
