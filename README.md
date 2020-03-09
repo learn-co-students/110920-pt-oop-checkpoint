@@ -1,4 +1,4 @@
-## Object Oriented Programming [Suggested Time: 20 minutes]
+## Object Oriented Programming
 
 In this exercise you will primarily be exploring a Pokemon dataset. Pokemon are fictional creatures from the [Nintendo franchise](https://en.wikipedia.org/wiki/Pok%C3%A9mon) of the same name.
 
