@@ -29,12 +29,12 @@ Create a class called `Pokemon` with an `__init__` method.
 Along with the necessary `self` parameter, the `__init__` method should 
 take in `data` as a parameter.
 
-With the idea that one of the dictionaries above will be passed in `data`, 
+With the idea that one of the dictionaries above will be passed in as `data`, 
 assign these specific attributes within the `__init__` method:
  
-* `name` : values from the 'name' key of the dicitonary passed in `data`
-* `weight`: values from the 'weight' key of the dicitonary passed in `data`
-* `height`values from the 'height' key of the dicitonary passed in `data`
+* `name` : values from the 'name' key of the dictionary passed in `data`
+* `weight`: values from the 'weight' key of the dictionary passed in `data`
+* `height`values from the 'height' key of the dictionary passed in `data`
 
 
 ```python
