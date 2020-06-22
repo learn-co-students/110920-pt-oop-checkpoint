@@ -33,14 +33,21 @@ squirtle_data = {"name": 'squirtle', "weight": 90, "height": 5, "base_experience
 
 ### 1. Creating a Class
 
-Create a class called `Pokemon` with an `__init__` method. Every `Pokemon` instance should have the following attributes:
-* `name`
-* `weight`
-* `height`
+Create a class called `Pokemon` with an `__init__` method. 
+
+Along with the necessary `self` parameter, the `__init__` method should 
+take in `data` as a parameter.
+
+With the idea that one of the dictionaries above will be passed in `data`, 
+assign these specific attributes within the `__init__` method:
+ 
+* `name` : values from the 'name' key of the dicitonary passed in `data`
+* `weight`: values from the 'weight' key of the dicitonary passed in `data`
+* `height`values from the 'height' key of the dicitonary passed in `data`
 
 
 ```python
-# Create your class below with the correct syntax, including an __init__ method.
+# Create your class in this cell.  Remember to use the correct syntax, and include an __init__ method!
 ```
 
 
@@ -52,10 +59,6 @@ class Pokemon:
         self.name = data["name"]
         self.weight = data["weight"]
         self.height = data["height"]
-        
-    def bmi(self):
-        return (self.weight*0.1)/(self.height*0.1)**2
-        
 ```
 
     
@@ -81,8 +84,14 @@ squirtle = Pokemon(squirtle_data)
 
 
 ```python
-# run this cell to test and check your code
-# you may need to edit the attribute variable names if you named them differently!
+'''
+run this cell to test and check your code
+
+make sure that the printed information matches the dictionaries above
+
+you may need to change the attribute variable names in the print statement 
+if you named them differently!
+'''
 
 def print_pokeinfo(pkmn):
     print('Name: ' + pkmn.name)
@@ -97,9 +106,14 @@ print_pokeinfo(squirtle)
 
 
 ```python
-# __SOLUTION__ 
-# run this cell to test and check your code
-# you may need to edit the attribute variable names if you named them differently!
+'''
+run this cell to test and check your code
+
+make sure that the printed information matches the dictionaries above
+
+you may need to change the attribute variable names in the print statement 
+if you named them differently!
+'''
 
 def print_pokeinfo(pkmn):
     print('Name: ' + pkmn.name)
@@ -111,6 +125,23 @@ print_pokeinfo(bulbasaur)
 print_pokeinfo(charmander)
 print_pokeinfo(squirtle)
 ```
+
+    Name: bulbasaur
+    Weight: 69
+    Height: 7
+    
+    
+    Name: charmander
+    Weight: 85
+    Height: 6
+    
+    
+    Name: squirtle
+    Weight: 90
+    Height: 5
+    
+    
+
 
 ### 3. Instance Methods
 
@@ -120,24 +151,38 @@ BMI is defined by the formula: $\frac{weight}{height^{2}}$
 
 The BMI should be calculated with weight in **kilograms** and height in **meters**. 
 
+The height and weight data of Pokemon from the API is in **decimeters** and **hectograms**, respectively. 
 
-The height and weight data of Pokemon from the API is in **decimeters** and **hectograms** respectively. Here are the conversions:
+You will have to convert the given values of height and weight to kilgrams and meters to make the BMI calculations correct.
+
+For your convenience, here are the conversions:
 
 ```
 1 decimeter = 0.1 meters
 1 hectogram = 0.1 kilograms
 ```
 
+**Don't forget**: since you change the `Pokemon` class, you will have to create **new objects** of this **new class**. 
+
+If you use the objects created by the first class you wrote, they will not have the `bmi` instance!
+
+You can assign these new objects the same names as you assigned the old ones:
+`bulbasaur`, `charmander` and `squirtle`
+
+
+```python
+# Your work here
+```
+
 
 ```python
 # run this cell to test and check your code
 
-# After defining a new instance method on the class, 
-# you will have to rerun the code instantiating your objects
+# don't forget to create new objects after adding the `bmi` instance to the `Pokemon` class!
 
-print(bulbasaur.bmi()) # 14.08
-print(charmander.bmi()) # 23.61
-print(squirtle.bmi()) # 36.0
+print(bulbasaur.bmi()) # you should get 14.08
+print(charmander.bmi()) # you should get 23.61
+print(squirtle.bmi()) # you should get 36.0
 ```
 
 
@@ -148,7 +193,30 @@ print(squirtle.bmi()) # 36.0
 # After defining a new instance method on the class, 
 # you will have to rerun the code instantiating your objects
 
-print(bulbasaur.bmi()) # 14.08
-print(charmander.bmi()) # 23.61
-print(squirtle.bmi()) # 36.0
+class Pokemon:
+    def __init__(self, data):
+        self.name = data["name"]
+        self.weight = data["weight"]
+        self.height = data["height"]
+        
+    def bmi(self):
+        return (self.weight*0.1)/(self.height*0.1)**2
+
+bulbasaur = Pokemon(bulbasaur_data)
+charmander = Pokemon(charmander_data)
+squirtle = Pokemon(squirtle_data)
+
+print(bulbasaur.bmi()) 
+print(charmander.bmi()) 
+print(squirtle.bmi()) 
+```
+
+    14.081632653061222
+    23.611111111111104
+    36.0
+
+
+
+```python
+
 ```
