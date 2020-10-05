@@ -16,7 +16,7 @@ You'll be working with following dictionaries to create the `Pokemon` objects
 
 
 ```python
-# Use the following data
+# Run this cell without changes
 bulbasaur_data = {"name": 'bulbasaur', "weight": 69, "height": 7, "base_experience": 64, "types": ["grass", "poison"]}
 charmander_data = {"name": 'charmander', "weight": 85, "height": 6, "base_experience": 62, "types": ["fire"]}
 squirtle_data = {"name": 'squirtle', "weight": 90, "height": 5, "base_experience": 63, "types": ["water"]}
@@ -24,11 +24,38 @@ squirtle_data = {"name": 'squirtle', "weight": 90, "height": 5, "base_experience
 
 
 ```python
-# __SOLUTION__
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
 # Use the following data
 bulbasaur_data = {"name": 'bulbasaur', "weight": 69, "height": 7, "base_experience": 64, "types": ["grass", "poison"]}
 charmander_data = {"name": 'charmander', "weight": 85, "height": 6, "base_experience": 62, "types": ["fire"]}
 squirtle_data = {"name": 'squirtle', "weight": 90, "height": 5, "base_experience": 63, "types": ["water"]}
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 ### 1. Creating a Class
@@ -47,18 +74,40 @@ assign these specific attributes within the `__init__` method:
 
 
 ```python
-# Create your class in this cell.  Remember to use the correct syntax, and include an __init__ method!
-```
+### BEGIN SOLUTION
 
 
-```python
-# __SOLUTION__ 
+from test_scripts.test_class import Test
+test = Test()
+
 # Create your class below with the correct syntax, including an __init__ method.
 class Pokemon:
     def __init__(self, data):
         self.name = data["name"]
         self.weight = data["weight"]
         self.height = data["height"]
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
     
@@ -68,22 +117,41 @@ Using the `bulbasaur_data`, `charmander_data` and `squirtle_data` variables, cre
 
 
 ```python
-# Your code here
-bulbasaur = pass
-charmander = pass
-squirtle = pass
-```
+### BEGIN SOLUTION
 
 
-```python
-# __SOLUTION__ 
+from test_scripts.test_class import Test
+test = Test()
+
 bulbasaur = Pokemon(bulbasaur_data)
 charmander = Pokemon(charmander_data)
 squirtle = Pokemon(squirtle_data)
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
 ```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
+=== BEGIN MARK SCHEME ===
+
 '''
 run this cell to test and check your code
 
@@ -102,46 +170,8 @@ def print_pokeinfo(pkmn):
 print_pokeinfo(bulbasaur)
 print_pokeinfo(charmander)
 print_pokeinfo(squirtle)
-```
 
-
-```python
-'''
-run this cell to test and check your code
-
-make sure that the printed information matches the dictionaries above
-
-you may need to change the attribute variable names in the print statement 
-if you named them differently!
-'''
-
-def print_pokeinfo(pkmn):
-    print('Name: ' + pkmn.name)
-    print('Weight: ' + str(pkmn.weight))
-    print('Height: ' + str(pkmn.height))
-    print('\n')
-    
-print_pokeinfo(bulbasaur)
-print_pokeinfo(charmander)
-print_pokeinfo(squirtle)
-```
-
-    Name: bulbasaur
-    Weight: 69
-    Height: 7
-    
-    
-    Name: charmander
-    Weight: 85
-    Height: 6
-    
-    
-    Name: squirtle
-    Weight: 90
-    Height: 5
-    
-    
-
+=== END MARK SCHEME ===
 
 ### 3. Instance Methods
 
@@ -171,23 +201,12 @@ You can assign these new objects the same names as you assigned the old ones:
 
 
 ```python
-# Your work here
-```
+### BEGIN SOLUTION
 
 
-```python
-# run this cell to test and check your code
+from test_scripts.test_class import Test
+test = Test()
 
-# don't forget to create new objects after adding the `bmi` instance to the `Pokemon` class!
-
-print(bulbasaur.bmi()) # you should get 14.08
-print(charmander.bmi()) # you should get 23.61
-print(squirtle.bmi()) # you should get 36.0
-```
-
-
-```python
-# __SOLUTION__ 
 # run this cell to test and check your code
 
 # After defining a new instance method on the class, 
@@ -209,6 +228,12 @@ squirtle = Pokemon(squirtle_data)
 print(bulbasaur.bmi()) 
 print(charmander.bmi()) 
 print(squirtle.bmi()) 
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
     14.081632653061222
@@ -218,5 +243,16 @@ print(squirtle.bmi())
 
 
 ```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
 
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
