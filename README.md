@@ -17,45 +17,27 @@ You'll be working with following dictionaries to create the `Pokemon` objects
 
 ```python
 # Run this cell without changes
-bulbasaur_data = {"name": 'bulbasaur', "weight": 69, "height": 7, "base_experience": 64, "types": ["grass", "poison"]}
-charmander_data = {"name": 'charmander', "weight": 85, "height": 6, "base_experience": 62, "types": ["fire"]}
-squirtle_data = {"name": 'squirtle', "weight": 90, "height": 5, "base_experience": 63, "types": ["water"]}
-```
-
-
-```python
-### BEGIN SOLUTION
-
-
-from test_scripts.test_class import Test
-test = Test()
-
-# Use the following data
-bulbasaur_data = {"name": 'bulbasaur', "weight": 69, "height": 7, "base_experience": 64, "types": ["grass", "poison"]}
-charmander_data = {"name": 'charmander', "weight": 85, "height": 6, "base_experience": 62, "types": ["fire"]}
-squirtle_data = {"name": 'squirtle', "weight": 90, "height": 5, "base_experience": 63, "types": ["water"]}
-
-test.save()
-
-
-
-### END SOLUTION
-```
-
-
-```python
-# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
-# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
-
-### BEGIN HIDDEN TESTS
-
-from test_scripts.test_class import Test
-test = Test()
-
-test.run_test()
-
-
-### END HIDDEN TESTS
+bulbasaur_data = {
+    "name": 'bulbasaur',
+    "weight": 69,
+    "height": 7,
+    "base_experience": 64,
+    "types": ["grass", "poison"]
+}
+charmander_data = {
+    "name": 'charmander',
+    "weight": 85,
+    "height": 6,
+    "base_experience": 62,
+    "types": ["fire"]
+}
+squirtle_data = {
+    "name": 'squirtle',
+    "weight": 90,
+    "height": 5,
+    "base_experience": 63,
+    "types": ["water"]
+}
 ```
 
 ### 1. Creating a Class
@@ -68,28 +50,21 @@ take in `data` as a parameter.
 With the idea that one of the dictionaries above will be passed in as `data`, 
 assign these specific attributes within the `__init__` method:
  
-* `name` : values from the 'name' key of the dictionary passed in `data`
-* `weight`: values from the 'weight' key of the dictionary passed in `data`
-* `height`values from the 'height' key of the dictionary passed in `data`
+* `name` : value from the 'name' key of the dictionary passed in `data`
+* `weight`: value from the 'weight' key of the dictionary passed in `data`
+* `height`: value from the 'height' key of the dictionary passed in `data`
 
 
 ```python
+# Create your class below with the correct syntax, including an __init__ method.
+
 ### BEGIN SOLUTION
 
-
-from test_scripts.test_class import Test
-test = Test()
-
-# Create your class below with the correct syntax, including an __init__ method.
 class Pokemon:
     def __init__(self, data):
         self.name = data["name"]
         self.weight = data["weight"]
         self.height = data["height"]
-
-test.save()
-
-
 
 ### END SOLUTION
 ```
@@ -99,13 +74,16 @@ test.save()
 # PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
 # THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
 
+# Pokemon should be a class that exists in this namespace
+assert type(Pokemon) == type
+
 ### BEGIN HIDDEN TESTS
 
-from test_scripts.test_class import Test
-test = Test()
+pikachu = Pokemon({"name":"pikachu", "weight":60, "height":4, "base_experience":112, "types":["electric"]})
 
-test.run_test()
-
+assert pikachu.name == "pikachu"
+assert pikachu.weight == 60
+assert pikachu.height == 4
 
 ### END HIDDEN TESTS
 ```
@@ -117,50 +95,22 @@ Using the `bulbasaur_data`, `charmander_data` and `squirtle_data` variables, cre
 
 
 ```python
+# Replace None with appropriate code
+
+bulbasaur = None
+charmander = None
+squirtle = None
+
 ### BEGIN SOLUTION
-
-
-from test_scripts.test_class import Test
-test = Test()
 
 bulbasaur = Pokemon(bulbasaur_data)
 charmander = Pokemon(charmander_data)
 squirtle = Pokemon(squirtle_data)
 
-test.save()
-
-
-
 ### END SOLUTION
-```
 
-
-```python
-# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
-# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
-
-### BEGIN HIDDEN TESTS
-
-from test_scripts.test_class import Test
-test = Test()
-
-test.run_test()
-
-
-### END HIDDEN TESTS
-```
-
-=== BEGIN MARK SCHEME ===
-
-'''
-run this cell to test and check your code
-
-make sure that the printed information matches the dictionaries above
-
-you may need to change the attribute variable names in the print statement 
-if you named them differently!
-'''
-
+# This code will test your implementation. Make sure the values printed
+# match the dictionaries above!
 def print_pokeinfo(pkmn):
     print('Name: ' + pkmn.name)
     print('Weight: ' + str(pkmn.weight))
@@ -170,20 +120,54 @@ def print_pokeinfo(pkmn):
 print_pokeinfo(bulbasaur)
 print_pokeinfo(charmander)
 print_pokeinfo(squirtle)
+```
 
-=== END MARK SCHEME ===
+    Name: bulbasaur
+    Weight: 69
+    Height: 7
+    
+    
+    Name: charmander
+    Weight: 85
+    Height: 6
+    
+    
+    Name: squirtle
+    Weight: 90
+    Height: 5
+    
+    
+
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+assert type(bulbasaur) == Pokemon
+assert type(charmander) == Pokemon
+assert type(squirtle) == Pokemon
+
+### BEGIN HIDDEN TESTS
+
+assert bulbasaur.name == "bulbasaur"
+assert charmander.weight == 85
+assert squirtle.height == 5
+
+### END HIDDEN TESTS
+```
 
 ### 3. Instance Methods
 
-Write an instance method called `bmi` within the class `Pokemon` defined above to calculate the BMI of a Pokemon. 
+Re-write the class `Pokemon` below, so that it has an instance method called `bmi` that calculates the BMI of a Pokemon.
 
 BMI is defined by the formula: $\frac{weight}{height^{2}}$ 
 
 The BMI should be calculated with weight in **kilograms** and height in **meters**. 
 
-The height and weight data of Pokemon from the API is in **decimeters** and **hectograms**, respectively. 
+The height and weight data of Pokemon from the dictionaries above is in **decimeters** and **hectograms**, respectively. 
 
-You will have to convert the given values of height and weight to kilgrams and meters to make the BMI calculations correct.
+You will have to convert the given values of height and weight to kilograms and meters to make the BMI calculations correct.
 
 For your convenience, here are the conversions:
 
@@ -192,7 +176,7 @@ For your convenience, here are the conversions:
 1 hectogram = 0.1 kilograms
 ```
 
-**Don't forget**: since you change the `Pokemon` class, you will have to create **new objects** of this **new class**. 
+**Don't forget**: since you are changing the `Pokemon` class, you will have to create **new objects** of this **new class**. 
 
 If you use the objects created by the first class you wrote, they will not have the `bmi` instance!
 
@@ -201,16 +185,14 @@ You can assign these new objects the same names as you assigned the old ones:
 
 
 ```python
+# Define the new Pokemon class here
+
+# Replace None with appropriate code
+bulbasaur = None
+charmander = None
+squirtle = None
+
 ### BEGIN SOLUTION
-
-
-from test_scripts.test_class import Test
-test = Test()
-
-# run this cell to test and check your code
-
-# After defining a new instance method on the class, 
-# you will have to rerun the code instantiating your objects
 
 class Pokemon:
     def __init__(self, data):
@@ -225,15 +207,12 @@ bulbasaur = Pokemon(bulbasaur_data)
 charmander = Pokemon(charmander_data)
 squirtle = Pokemon(squirtle_data)
 
+### END SOLUTION
+
+# This code will test your implementation
 print(bulbasaur.bmi()) 
 print(charmander.bmi()) 
 print(squirtle.bmi()) 
-
-test.save()
-
-
-
-### END SOLUTION
 ```
 
     14.081632653061222
@@ -246,13 +225,26 @@ test.save()
 # PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
 # THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
 
+# bulbasaur.bmi should be a method on an instance of type Pokemon
+import types
+assert type(bulbasaur.bmi) == types.MethodType
+# bulbasaur.bmi() should return a floating point number
+assert type(bulbasaur.bmi()) == float
 ### BEGIN HIDDEN TESTS
 
-from test_scripts.test_class import Test
-test = Test()
-
-test.run_test()
-
+assert bulbasaur.bmi() == (bulbasaur.weight*0.1)/(bulbasaur.height*0.1)**2
 
 ### END HIDDEN TESTS
 ```
+
+### 4. OOP Concepts
+
+What is the difference between a class and an instance?
+
+=== BEGIN MARK SCHEME ===
+
+A class represents a template or blueprint.  It specifies the variables and that should be associated with a given instance, but it doesn't contain the actual values of those variables.
+
+An instance represents an actual object, an instantiation of a class.  It contains the actual values of the variables specified by the class.
+
+=== END MARK SCHEME ===
